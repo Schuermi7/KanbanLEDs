@@ -8,9 +8,9 @@
 #define ENCODERA            4
 #define ENCODERB            3
 #define DELAY               20  // Delay per loop in ms
-#define BACKLOG             55
-#define WORKING             35
-#define DONE                10
+#define BACKLOG             33
+#define WORKING             41
+#define DONE                14
 CRGB real_leds[NUM_LEDS];
 CRGB* leds = real_leds;
 uint32_t last_button = 0;
@@ -41,11 +41,11 @@ void loop()
           leds[i] = CRGB(255, 0, 0);
           
         }
-        if (i<(BACKLOG+WORKING) && i>BACKLOG){
+        if (i<(BACKLOG+WORKING) && i=>BACKLOG){
           leds[i] = CRGB(255, 255, 0);
           Serial.print("blub");
         }
-        if (i<(BACKLOG+WORKING+DONE) && i>(WORKING+BACKLOG)){
+        if (i<(BACKLOG+WORKING+DONE) && i>=(WORKING+BACKLOG)){
           leds[i] = CRGB(0, 128, 0);
         } 
     }
