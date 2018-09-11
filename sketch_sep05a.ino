@@ -45,7 +45,7 @@ void loop()
           leds[i] = CRGB(255, 255, 0);
           Serial.print("blub");
         }
-        if (i<(BACKLOG+WORKING+DONE) && i>=(WORKING+BACKLOG)){
+        if (i<=(BACKLOG+WORKING+DONE) && i>=(WORKING+BACKLOG)){
           leds[i] = CRGB(0, 128, 0);
         } 
     }
